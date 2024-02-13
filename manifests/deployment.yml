@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: charleswenghueborgweb 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: charleswenghueborgweb
+  template:
+    metadata:
+      labels:
+        app: charleswenghueborgweb 
+    spec:
+      containers:
+        - name: charleswenghueborgweb 
+          image: sapcwdockerregistryname.azurecr.io/charleswenghueborgweb
+          ports:
+          - containerPort: 3000
