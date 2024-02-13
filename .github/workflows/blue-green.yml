@@ -46,8 +46,8 @@ jobs:
         with:
           namespace: default
           manifests: |
-            ./kubernetes/service.yaml
-            ./kubernetes/blue-deploy.yaml
+            ./kubernetes/service.yml
+            ./kubernetes/blue-deploy.yml
           images: |
             sapcwdockerregistryname.azurecr.io/green-nginx:1
           strategy: blue-green
@@ -80,8 +80,8 @@ jobs:
         with:
           namespace: default
           manifests: |
-            ./kubernetes/service.yaml
-            ./kubernetes/green-deploy.yaml
+            ./kubernetes/service.yml
+            ./kubernetes/green-deploy.yml
           images: |
             sapcwdockerregistryname.azurecr.io/green-nginx:1
           strategy: blue-green
@@ -94,8 +94,8 @@ jobs:
         with:
           namespace: default
           manifests: |
-            ./kubernetes/service.yaml
-            ./kubernetes/blue-deploy.yaml
+            ./kubernetes/service.yml
+            ./kubernetes/blue-deploy.yml
           images: |
             demogaurav.azurecr.io/green-nginx:1
           strategy: blue-green
