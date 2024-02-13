@@ -19,7 +19,7 @@ variables:
   imagePullSecret: 'sapcwdockerregistryname786396e4-auth'
 
   # Agent VM image name
-  # vmImageName: 'macOS'
+  vmImageName: 'ubuntu-latest'
 
 
 stages:
@@ -28,8 +28,8 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    # pool:
-    #   vmImage: $(vmImageName)
+    pool:
+      vmImage: $(vmImageName)
     steps:
     - task: Docker@2
       displayName: Build and push an image to container registry
@@ -51,8 +51,8 @@ stages:
   jobs:
   - deployment: Deploy
     displayName: Deploy
-    # pool:
-    #   vmImage: $(vmImageName)
+    pool:
+      vmImage: $(vmImageName)
     environment: 'charleswenghueborgweb-1039.default'
     strategy:
       runOnce:
